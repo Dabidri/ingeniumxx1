@@ -1,0 +1,1087 @@
+/* --- INICIO DE style.css --- */
+
+/* Basic Reset and Root Variables */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #00bfff; /* Bright Blue */
+  --secondary-color: #4fc3f7; /* Lighter Blue */
+  --tertiary-color: #2a5a7a; /* Deeper Blue/Teal for accents */
+  --background-dark: #0a0a1a; /* Very Dark Blue/Black */
+  --background-card: rgba(18, 25, 45, 0.85); /* Darker Card Background */
+  --background-card-hover: rgba(25, 35, 60, 0.949);
+  --text-light: #f0f0f0;
+  --text-medium: #bbb;
+  --text-dark: #333;
+  --border-color: rgba(0, 191, 255, 0.2); /* Softer border */
+  --connector-color: rgba(0, 191, 255, 0.4);
+  /* Book cover variables */
+  --book-cover-bg: #2a3a5a;
+  --book-cover-border: var(--primary-color);
+  /* Map Variables (Scoped later) */
+  /* --city-radius: 2rem; */ /* Defined within scoped rules */
+  /* --city-sign-color-back: #00c080; */ /* Defined within scoped rules */
+  /* --city-sign-color-font: #fff; */ /* Defined within scoped rules */
+  /* --city-pin-size-font: 1.2rem; */ /* Defined within scoped rules */
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--background-dark) linear-gradient(180deg, rgba(10,10,26,0.8) 0%, rgba(10,10,26,0) 30%); /* Subtle top gradient */
+  color: var(--text-light);
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding-top: 5px; /* Ajustado desde 70px a 5px como estaba originalmente */
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px; /* Slightly wider max-width */
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Headings and Text */
+h1, h2, h3, h4 {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  letter-spacing: 0.5px;
+}
+
+h2 { /* Section Titles */
+  font-size: 2.8rem; /* Larger section titles */
+  text-align: center;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.2);
+}
+
+h3 { /* Sub-Section Titles (like in Timeline Items) */
+  font-size: 1.7rem; /* Slightly adjusted */
+  color: var(--secondary-color);
+  margin-bottom: 1.8rem; /* Ajustado desde 0.8rem */
+}
+
+h4 { /* Figure Names in Visionarios */
+   font-size: 2rem; /* Larger figure names */
+   color: var(--primary-color);
+   margin-bottom: 1rem; /* Ajustado desde 0.5rem */
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--text-medium);
+}
+
+.section-subtitle {
+  text-align: center;
+  max-width: 750px;
+  margin: -1rem auto 3.5rem auto; /* More space below subtitle */
+  color: var(--text-medium);
+  font-size: 1.1rem;
+  font-weight: 300;
+}
+
+/* --- Barra de Navegación (sin cambios funcionales) --- */
+.navbar {
+  background-color: rgba(12, 8, 21, 0.97); /* Slightly more opaque */
+  backdrop-filter: blur(5px); /* Stronger blur */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 3px 12px rgba(0, 191, 255, 0.12);
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.nav-brand { font-size: 1.8rem; font-weight: 400; color: var(--primary-color); text-decoration: none; transition: color 0.3s ease; }
+.nav-brand:hover { color: var(--secondary-color); }
+.nav-links { list-style: none; display: flex; gap: 25px; margin: 0; padding: 0; }
+.nav-links li a { color: var(--text-light); text-decoration: none; font-weight: 400; padding: 8px 12px; border-radius: 4px; transition: background-color 0.3s ease, color 0.3s ease; }
+.nav-links li a:hover, .nav-links li a:focus { background-color: var(--primary-color); color: var(--background-dark); outline: none; }
+.nav-links li a.active { background-color: var(--primary-color); color: var(--background-dark); font-weight: 700; }
+
+
+/* --- Hero Section (sin cambios) --- */
+.hero-section { height: calc(100vh - -70px); min-height: 550px; background: url('/imagenes/placeholder_hero_bg.jpg') no-repeat center center/cover; position: relative; display: flex; align-items: center; justify-content: center; text-align: center; color: var(--text-light); z-index: 1; margin-top: -70px; padding-top: 70px; overflow: hidden; }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(4, 9, 17, 0.75); z-index: 2; }
+.hero-content { position: relative; z-index: 3; max-width: 800px; padding: 0 20px; animation: fadeInHeroAnimation 1.5s ease-out; }
+.hero-content h1 { font-size: 3.5rem; margin-bottom: 0.5rem; color: #ffffff; text-shadow: 1px 1px 5px rgba(0,0,0,0.5); }
+.hero-content .subtitle { display: block; font-size: 5rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1rem; text-shadow: 2px 2px 8px rgba(0, 191, 255, 0.4); }
+.hero-content .tagline { font-size: 1.3rem; font-weight: 300; color: #eee; }
+@keyframes fadeInHeroAnimation { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+
+/* --- Estilos Comunes de Sección --- */
+section {
+  padding: 100px 0;
+  position: relative;
+  /* overflow: hidden; */ /* Comentado temporalmente para ver si el cohete se sale */
+}
+
+/* --- [MODIFIED] Introduction Section --- */
+/* Container for the two columns */
+.intro-section .intro-content-wrapper {
+  display: flex;
+  gap: 200px; /* Space between text and map */
+  align-items: center ; /* Align columns at the top */
+  margin-top: 2rem; /* Add some space below subtitle */
+}
+
+/* Left column (Text/Card) */
+.intro-section .intro-text-content {
+  flex: 1; /* Takes up remaining space */
+  max-width: 60%; /* Limit width */
+  display: flex; /* Use flexbox for vertical alignment */
+  flex-direction: column; /* Stack card and icons vertically */
+  /* align-items: center; */ /* Center card horizontally if desired */
+}
+
+/* Icons within the text column (adjusted margin) */
+.intro-section .intro-text-content .intro-icons {
+  margin-top: 1.5rem; /* Reduced space between card and icons */
+  display: flex;
+  justify-content: flex-start; /* Align icons to the start (or center) */
+  /* justify-content: center; */ /* Uncomment to center icons */
+  align-items: center;
+  gap: 30px; /* Adjust gap */
+  font-size: 1rem; /* Slightly smaller icons */
+  color: var(--secondary-color);
+  flex-wrap: wrap;
+  width: 100%; /* Ensure icons container takes width */
+}
+.intro-section .intro-text-content .intro-icons span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.intro-section .intro-text-content .intro-icons i {
+  color: var(--primary-color);
+  font-size: 1.8rem; /* Adjust icon size */
+}
+
+/* Right column (Map) */
+.intro-section .intro-map-content {
+  flex: 0 0 350px; /* Fixed width for map container */
+  max-width: 400px; /* Absolute max width */
+  position: relative; /* Important for absolutely positioned children */
+  align-self: center; /* Vertically center map column if desired */
+  margin-top: 1rem; /* Add some top margin if needed */
+}
+
+/* --- [NEW & SCOPED] Map Styles --- */
+.intro-section .map-container {
+--city-radius: 1.8rem; /* Adjusted */
+--city-sign-color-back: var(--tertiary-color); /* Use theme color */
+--city-sign-color-font: var(--text-light); /* Use theme color */
+--city-pin-size-font: 1.1rem; /* Adjusted */
+
+border-radius: 0.5em;
+box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4); /* Slightly adjusted shadow */
+line-height: 1;
+position: relative;
+width: 100%; /* Fill its flex container */
+aspect-ratio: 1; /* Keep it square */
+overflow: hidden; /* Clip contents to rounded border */
+}
+
+.intro-section .map-background {
+border-radius: inherit;
+left: 0;
+position: absolute;
+top: 0;
+width: 100%;
+height: 100%; /* Ensure SVG takes full height */
+}
+.intro-section .map-background rect {
+ fill: #202838; /* Darker background for the map area */
+}
+.intro-section .map-background path {
+ fill: var(--secondary-color); /* Use theme color for the 'land' */
+ opacity: 0.6; /* Make it slightly transparent */
+}
+
+
+.intro-section .map-cities {
+width: 100%;
+height: 100%;
+position: absolute; /* Position relative to map-container */
+top: 0;
+left: 0;
+}
+.intro-section .map-city {
+border-radius: var(--city-radius);
+left: calc(var(--x) * 1%); /* Position based on % */
+padding: var(--city-radius);
+position: absolute;
+top: calc(var(--y) * 1%); /* Position based on % */
+transform: translate(-50%, -50%); /* Center the clickable area on the point */
+cursor: pointer;
+z-index: calc(10 + var(--y)); /* Basic stacking based on Y */
+}
+.intro-section .map-city::after,
+.intro-section .map-city::before {
+font-size: var(--city-pin-size-font);
+position: absolute;
+width: 100%;
+text-align: center;
+left: 50%; /* Center relative to parent */
+top: 50%; /* Center relative to parent */
+transform: translate(-50%, -50%); /* Center precisely */
+pointer-events: none; /* Prevent pin from blocking hover */
+}
+.intro-section .map-city::before {
+content: "•";
+color: var(--primary-color); /* Dot color */
+/* Adjust vertical position slightly if needed */
+top: calc(50% - 0.1em); /* Fine-tune dot position */
+text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+font-size: 1.4em; /* Make dot slightly larger */
+z-index: 1; /* Dot below pin */
+}
+.intro-section .map-city::after {
+content: "📍";
+color: #ff5555; /* Pin color */
+clip-path: inset(-0.5em 0 0 0);
+/* Adjust vertical position */
+top: calc(50% - 0.7em); /* Position pin above dot */
+transition: all 300ms ease-out;
+z-index: 2; /* Pin above dot */
+}
+
+.intro-section .map-city__label {
+display: none;
+left: 50%; /* Start centered */
+transform: translateX(-50%); /* Center the label container */
+position: absolute;
+bottom: 100%; /* Position label above the pin origin */
+margin-bottom: 15px; /* Space between pin and label */
+text-align: center;
+width: 12em; /* Adjust width if needed */
+z-index: 999;
+pointer-events: none; /* Prevent label from blocking hover */
+}
+.intro-section .map-city__sign {
+align-items: center;
+background-color: var(--city-sign-color-back);
+border-radius: 0.2rem;
+border: 0.15em solid var(--city-sign-color-font);
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+color: var(--city-sign-color-font);
+column-gap: 0.4em;
+display: inline-flex; /* Use inline-flex */
+font-weight: 600; /* Slightly less bold */
+justify-content: center;
+margin: 0 auto;
+max-width: 100%;
+overflow: hidden;
+padding: 0.4em 0.7em; /* Adjust padding */
+text-overflow: ellipsis;
+white-space: nowrap; /* Changed from text-wrap */
+font-size: 0.9rem; /* Adjust font size */
+}
+.intro-section .map-city__sign::before {
+content: attr(data-icon);
+display: inline-block; /* Ensure icon takes space */
+margin-right: 0.3em; /* Space after icon */
+}
+
+/* Map Tracking / Hover Effects */
+.intro-section .map-city:hover::after {
+clip-path: inset(-0.5em 0 0.5em 0);
+transform: translate(-50%, calc(-50% + 0.5em)); /* Adjust transform origin */
+color: #ff8888; /* Lighter pin on hover */
+}
+.intro-section .map-city:hover .map-city__label {
+animation: map_fadein 300ms forwards ease-out; /* Renamed animation */
+display: block;
+}
+.intro-section .map-city:hover .map-city__sign.anim::before {
+animation-duration: 500ms;
+animation-fill-mode: forwards;
+}
+.intro-section .map-city:hover .map-city__sign.anim-grow::before {
+animation-name: map_grow; /* Renamed animation */
+animation-timing-function: ease-in;
+}
+.intro-section .map-city:hover .map-city__sign.anim-slidein::before {
+animation-name: map_slidein; /* Renamed animation */
+animation-timing-function: ease-out;
+}
+
+/* Map Animations (Renamed to avoid conflicts) */
+@keyframes map_fadein {
+0% {
+  opacity: 0;
+  transform: translate(-50%, 10px); /* Fade in from slightly lower */
+}
+100% {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+}
+@keyframes map_grow { /* Simplified grow */
+0% { transform: scale(0.5) translateY(50%); opacity: 0; }
+100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+@keyframes map_slidein {
+0% { transform: translateX(-100%); opacity: 0; }
+100% { transform: translateX(0); opacity: 1; }
+}
+/* --- [END NEW] Map Styles --- */
+
+
+/* --- [NUEVO DISEÑO] Timeline Section (Hitos - Sin Cambios) --- */
+/* ... (Existing Timeline styles remain unchanged) ... */
+.timeline-section {
+  background: var(--background-dark) linear-gradient(rgba(10,10,26,0.6), rgba(10,10,26,0.9));
+}
+.new-timeline-container { position: relative; max-width: 1000px; margin: 40px auto; }
+.new-timeline-container::before { content: ''; position: absolute; top: 0; left: 50%; bottom: 0; width: 2px; background: linear-gradient(to bottom, transparent, var(--connector-color) 10%, var(--connector-color) 90%, transparent); transform: translateX(-50%); z-index: 1; }
+.timeline-event { position: relative; margin-bottom: 80px; width: 50%; padding: 20px; z-index: 2; }
+.timeline-event:nth-child(odd) { left: 0; padding-right: 60px; text-align: right; }
+.timeline-event:nth-child(even) { left: 50%; padding-left: 60px; text-align: left; }
+.event-content-wrapper { background-color: var(--background-card); padding: 30px; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); position: relative; transition: transform 0.4s ease, box-shadow 0.4s ease; }
+.timeline-event:hover .event-content-wrapper { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0, 191, 255, 0.25); }
+.event-content-wrapper h3 { color: var(--primary-color); font-size: 1.8rem; margin-top: 0; }
+.event-content-wrapper p { color: var(--text-light); margin-bottom: 1rem; }
+.event-content-wrapper p strong { color: var(--secondary-color); display: block; margin-top: 0.7rem; font-weight: 600; }
+.timeline-event-icon { position: absolute; top: 20px; width: 50px; height: 50px; border-radius: 50%; background-color: var(--tertiary-color); border: 3px solid var(--primary-color); z-index: 10; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; color: var(--primary-color); transition: transform 0.3s ease, box-shadow 0.3s ease; }
+.timeline-event:hover .timeline-event-icon { transform: scale(1.15); box-shadow: 0 0 15px var(--primary-color); }
+.timeline-event:nth-child(odd) .timeline-event-icon { right: -25px; transform: translateX(50%); }
+.timeline-event:nth-child(even) .timeline-event-icon { left: -25px; transform: translateX(-50%); }
+.event-content-wrapper::after { content: ''; position: absolute; top: 28px; width: 0; height: 0; border-style: solid; border-width: 10px; z-index: 5; }
+.timeline-event:nth-child(odd) .event-content-wrapper::after { right: -20px; border-color: transparent transparent transparent var(--background-card); }
+.timeline-event:nth-child(even) .event-content-wrapper::after { left: -20px; border-color: transparent var(--background-card) transparent transparent; }
+
+/* --- Advances Section --- */
+/* ... (Existing Advances Book styles remain unchanged) ... */
+.advances-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 45px; margin-top: 3rem; justify-content: center; align-items: start; padding: 20px 0; }
+.advance-book { position: relative; border-radius: 10px; width: 220px; height: 300px; background-color: var(--background-card); box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.6); transform-style: preserve-3d; perspective: 2000px; display: flex; align-items: center; justify-content: center; color: var(--text-light); margin: 0 auto; border: 1px solid var(--border-color); }
+.advance-book .cover { top: 0; left: 0; position: absolute; background-color: var(--book-cover-bg); width: 100%; height: 100%; border-radius: 10px; cursor: pointer; transition: transform 0.6s ease-in-out; transform-origin: left center; box-shadow: 3px 0px 12px rgba(0, 0, 0, 0.5); display: flex; align-items: center; justify-content: center; padding: 25px; z-index: 5; border-left: 3px solid var(--book-cover-border); overflow: hidden; }
+.advance-book:hover .cover { transition: transform 0.6s ease-in-out; transform: rotateY(-115deg) translateZ(5px); }
+.advance-book .cover-content { text-align: center; color: var(--text-light); }
+.advance-book .book-icon { display: block; margin: 0 auto 1.2rem auto; text-align: center; }
+.advance-book svg.book-icon { width: 70px; height: 70px; fill: var(--primary-color); }
+.advance-book i.book-icon { font-size: 4rem; color: var(--primary-color); line-height: 1; width: 70px; height: 70px; }
+.advance-book .book-title { font-size: 1.5rem; color: var(--text-light); font-weight: 700; margin: 0; line-height: 1.3; }
+.advance-book .cover-content::after { content: "Ver Detalles"; display: block; font-size: 0.8rem; font-weight: 300; color: var(--secondary-color); margin-top: 15px; opacity: 0.8; transition: opacity 0.3s ease; }
+.advance-book:hover .cover-content::after { opacity: 0; }
+.advance-book .book-inner-content { padding: 25px; text-align: left; color: var(--text-medium); font-size: 0.95rem; line-height: 1.5; max-height: calc(300px - 50px); overflow-y: auto; -ms-overflow-style: none; scrollbar-width: none; }
+.advance-book .book-inner-content::-webkit-scrollbar { display: none; }
+.advance-book .book-inner-content p { margin: 0; font-weight: 400; }
+.clickable-advance { cursor: pointer; }
+
+/* --- [NUEVO DISEÑO] Figures Section (Visionarios - Sin Cambios) --- */
+/* ... (Existing Figures styles remain unchanged) ... */
+.figures-section { background: var(--background-dark) linear-gradient(rgba(10,10,26,0.9), rgba(10,10,26,0.6)); }
+.figures-container { max-width: 950px; margin: 0 auto; display: flex; flex-direction: column; gap: 80px; }
+.figure-entry { display: flex; align-items: center; gap: 40px; background-color: transparent; border-radius: 15px; padding: 30px; border: 1px solid transparent; transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease; position: relative; }
+.clickable-figure { cursor: pointer; }
+.figure-entry:hover { background-color: var(--background-card); border-color: var(--border-color); transform: scale(1.02); box-shadow: 0 10px 30px rgba(0, 191, 255, 0.15); }
+.figure-image-left { flex-direction: row; }
+.figure-image-right { flex-direction: row-reverse; }
+.figure-image-container { flex: 0 0 200px; height: 200px; border-radius: 50%; overflow: hidden; box-shadow: 0 0 20px rgba(0, 191, 255, 0.2); transition: transform 0.4s ease; }
+.figure-entry:hover .figure-image-container { transform: scale(1.05); }
+.figure-image-container img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.figure-content { flex: 1; }
+.figure-image-left .figure-content { text-align: left; }
+.figure-image-right .figure-content { text-align: right; }
+.figure-content h4 { margin-bottom: 1rem; }
+.figure-content .figure-description { font-size: 1.1rem; line-height: 1.7; color: var(--text-light); margin-bottom: 1.5rem; }
+.figure-content .figure-click-hint { display: inline-block; font-size: 0.9rem; color: var(--secondary-color); opacity: 0; transition: opacity 0.4s ease; font-weight: 300; }
+.figure-entry:hover .figure-click-hint { opacity: 1; }
+.figure-click-hint i { margin-left: 5px; vertical-align: middle; }
+
+
+/* --- [MODIFIED] Conclusion Section --- */
+.conclusion-section { text-align: center; }
+.conclusion-section .container {
+  max-width: 1100px; /* Aumentado para dar espacio a los cohetes */
+  margin: 0 auto;
+  position: relative; /* Contexto para posicionar los cohetes */
+  padding-bottom: 280px; /* Espacio para que los cohetes 'despeguen' antes del footer */
+}
+.conclusion-section .conclusion-text-content {
+  max-width: 800px; /* Mantenemos el ancho del texto */
+  margin: 0 auto; /* Centramos el bloque de texto */
+  position: relative; /* Para asegurar que esté por encima de los cohetes si es necesario */
+  z-index: 5;
+}
+
+
+/* Buttons (No change) */
+.animated-button { position: relative; display: flex; align-items: center; gap: 4px; padding: 16px 36px; border: 4px solid; border-color: transparent; font-size: 16px; background-color: inherit; border-radius: 100px; font-weight: 600; color: rgb(59, 143, 200); box-shadow: 0 0 0 2px rgba(47, 95, 255, 0.436); cursor: pointer; overflow: hidden; transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); }
+.glow-button { --glow-color: rgb(255, 255, 255); --glow-spread-color: rgba(255, 255, 255, 0.781); --enhanced-glow-color: rgb(23, 24, 97); --btn-color: rgb(58, 73, 133); border: .15em solid var(--glow-color); padding: 1em 3em; color: var(--glow-color); font-size: 15px; font-weight: bold; background-color: var(--btn-color); border-radius: 0.9em; outline: none; box-shadow: 0 0 1em .25em var(--glow-color), 0 0 4em 1em var(--glow-spread-color), inset 0 0 .75em .25em var(--glow-color); text-shadow: 0 0 .5em var(--glow-color); position: relative; transition: all 0.3s; }
+.glow-button::after { pointer-events: none; content: ""; position: absolute; top: 120%; left: 0; height: 100%; width: 100%; background-color: var(--glow-spread-color); filter: blur(2em); opacity: .7; transform: perspective(1.5em) rotateX(35deg) scale(1, .6); }
+.glow-button:hover { color: var(--btn-color); background-color: var(--glow-color); box-shadow: 0 0 1em .25em var(--glow-color), 0 0 4em 2em var(--glow-spread-color), inset 0 0 .75em .25em var(--glow-color); }
+.glow-button:active { box-shadow: 0 0 0.6em .25em var(--glow-color), 0 0 2.5em 2em var(--glow-spread-color), inset 0 0 .5em .25em var(--glow-color); }
+.cta-button { display: inline-block; background-color: var(--primary-color); color: var(--background-dark); padding: 12px 28px; border-radius: 30px; text-decoration: none; font-weight: 700; transition: all 0.3s ease; box-shadow: 0 4px 10px rgba(0, 191, 255, 0.2); border: none; cursor: pointer; }
+.cta-button i { margin-left: 8px; }
+.cta-button:hover { background-color: var(--secondary-color); color: #fff; transform: scale(1.05) translateY(-2px); box-shadow: 0 6px 15px rgba(79, 195, 247, 0.4); }
+
+/* --- Footer (sin cambios) --- */
+.footer-section {
+  background-color: #050510;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+  /* margin-top: 60px; */ /* Quitamos el margen superior para que los cohetes se acerquen */
+  border-top: 1px solid rgba(0, 191, 255, 0.15);
+  position: relative; /* Para asegurar que esté por encima de los humos si se salen */
+  z-index: 2;
+}
+.footer-section p { margin-bottom: 0.5rem; line-height: 1.5; }
+.footer-section p:last-child { margin-bottom: 0; }
+
+/* --- Modal Genérico para Detalles (sin cambios funcionales) --- */
+.modal#detailModal { position: fixed; z-index: 1001; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0, 0, 0, 0.9); display: none; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease-in-out; }
+.modal#detailModal.show { display: flex; opacity: 1; }
+.modal-content { background-color: #101828; padding: 35px 45px; border: 1px solid var(--border-color); width: 90%; max-width: 720px; border-radius: 12px; position: relative; box-shadow: 0 10px 40px rgba(0, 191, 255, 0.3); animation: zoomInModal 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); max-height: 85vh; overflow-y: auto; color: var(--text-light); }
+.modal-header { text-align: center; margin-bottom: 25px; }
+.modal-img { display: inline-block; width: 150px; height: 150px; border-radius: 50%; object-fit: cover; border: 4px solid var(--secondary-color); vertical-align: middle; box-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.modal-icon { display: inline-block; font-size: 4.5rem; color: var(--primary-color); width: 150px; height: 150px; line-height: 150px; text-align: center; vertical-align: middle; }
+#modal-detail-title { text-align: center; color: var(--primary-color); margin-top: 0; margin-bottom: 25px; font-size: 2.2rem; line-height: 1.3; }
+.modal-body p#modal-detail-text { font-size: 1.1rem; line-height: 1.7; text-align: left; color: #ddd; }
+.modal-body p#modal-detail-text strong { color: var(--secondary-color); font-weight: 600; }
+.close-btn { color: #aaa; position: absolute; top: 15px; right: 20px; font-size: 35px; font-weight: bold; line-height: 1; transition: color 0.3s ease, transform 0.2s ease; cursor: pointer; }
+.close-btn:hover, .close-btn:focus { color: var(--primary-color); text-decoration: none; transform: scale(1.2); outline: none; }
+@keyframes zoomInModal { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+
+/* --- Reveal Animation (sin cambios) --- */
+.reveal { position: relative; opacity: 0; transform: translateY(50px); transition: opacity 1s ease-out, transform 1s ease-out; will-change: opacity, transform; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* --- [NEW] Hitos Section Styles --- */
+.hitos-section {
+  background: var(--background-dark) linear-gradient(rgba(10,10,26,0.8), rgba(10,10,26,0.9));
+  /* Padding is handled by the general 'section:not(...)' rule */
+}
+
+.hitos-cards-container {
+  display: flex;
+  justify-content: space-around; /* Distribute cards evenly */
+  align-items: center; /* Align cards vertically */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 40px; /* Space between cards */
+  margin-top: 3rem; /* Space below subtitle */
+}
+
+/* Scoped Card Styles for Hitos Section */
+.hitos-section .card { /* Note: Using .card here might conflict if not careful */
+position: relative;
+width: 450px; /* Adjusted width */
+height: 280px; /* Adjusted height */
+/* Use theme variables for background */
+background: linear-gradient(-45deg, var(--tertiary-color) 0%, var(--background-dark) 100% );
+border-radius: 10px;
+display: flex;
+align-items: center;
+justify-content: center;
+overflow: hidden;
+transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+border: 1px solid var(--border-color); /* Add subtle border */
+/* Reset properties from the new card if needed */
+max-width: none; /* Override max-width from the other card */
+max-height: none; /* Override max-height */
+padding: 0; /* Reset padding */
+margin: 0; /* Reset margin */
+font-family: inherit; /* Inherit font */
+text-decoration: none; /* Reset text-decoration */
+z-index: auto; /* Reset z-index */
+}
+
+/* Important: Need to make Hitos card styles more specific if both card types are on the same page */
+/* Example: If the Hitos cards have a specific container */
+/* .hitos-cards-container .card { ... } */
+
+.hitos-section .card svg {
+width: 80px; /* Adjusted SVG size */
+height: 80px; /* Ensure height matches width */
+fill: var(--primary-color); /* Use theme color */
+transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.hitos-section .card:hover {
+transform: rotate(-3deg) scale(1.05); /* Slightly less rotation/scale */
+box-shadow: 0 10px 25px rgba(0, 191, 255, 0.2); /* Themed shadow */
+}
+
+.hitos-section .card__content {
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) rotate(-45deg);
+width: 100%;
+height: 100%;
+padding: 25px; /* More padding */
+box-sizing: border-box;
+background-color: var(--text-light); /* Light background for content */
+opacity: 0;
+transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.hitos-section .card:hover .card__content {
+transform: translate(-50%, -50%) rotate(0deg);
+opacity: 1;
+}
+
+.hitos-section .card__title {
+margin: 0 0 10px 0; /* Add bottom margin */
+font-size: 1.3rem; /* Adjusted font size */
+color: var(--background-dark); /* Dark text */
+font-weight: 700; /* Bold title */
+}
+
+.hitos-section .card__description {
+margin: 0; /* Remove top margin */
+font-size: 0.9rem; /* Adjusted font size */
+color: #555; /* Dark grey text */
+line-height: 1.5; /* Adjusted line height */
+}
+
+.hitos-section .card:hover svg {
+scale: 0;
+transform: rotate(-45deg);
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablets (landscape y portrait grande) */
+@media (max-width: 992px) {
+  h2 { font-size: 2.5rem; }
+  section { padding: 80px 0; }
+
+  /* Intro Section: Stack columns */
+  .intro-section .intro-content-wrapper {
+      flex-direction: column;
+      gap: 50px; /* Vertical gap */
+      align-items: center; /* Center items when stacked */
+  }
+  .intro-section .intro-text-content {
+      max-width: 90%; /* Allow text/card to take more width */
+      align-items: center; /* Center card and icons */
+  }
+   .intro-section .intro-text-content .intro-icons {
+      justify-content: center; /* Center icons */
+  }
+  /* Ensure card width is respected */
+  .intro-section .intro-text-content .card {
+      max-width: 500px; /* Maintain card max-width */
+      width: 100%; /* Allow shrinking */
+  }
+
+  .intro-section .intro-map-content {
+      flex-basis: auto; /* Reset flex basis */
+      width: 100%; /* Full width */
+      max-width: 450px; /* Limit map size */
+      margin-top: 2rem; /* Add space above map */
+  }
+
+  /* Timeline Adjustments */
+  .timeline-event:nth-child(odd) { padding-right: 40px; }
+  .timeline-event:nth-child(even) { padding-left: 40px; }
+
+  /* Visionarios Adjustments */
+  .figure-image-container { flex-basis: 160px; height: 160px; }
+  .figure-entry { gap: 30px; padding: 25px; }
+  h4 { font-size: 1.8rem; }
+  .figure-content .figure-description { font-size: 1rem; }
+
+  /* Advances Grid - Adjust gap */
+   .advances-grid { gap: 35px; }
+
+  .modal-content { max-width: 90%; }
+
+  /* Ocultar cohetes en pantallas medianas/pequeñas */
+  .conclusion-section .rocket {
+      display: none;
+  }
+   .conclusion-section .container {
+       padding-bottom: 0; /* Reset padding when rockets are hidden */
+       max-width: 800px; /* Reset max-width */
+   }
+
+}
+
+/* Tablets (portrait) y Móviles Grandes */
+@media (max-width: 768px) {
+  body { padding-top: 60px; }
+  .navbar { height: 60px; }
+  h2 { font-size: 2.2rem; }
+
+  /* Mobile Timeline: Stacked */
+  .new-timeline-container::before { left: 30px; transform: translateX(0); }
+  .timeline-event { width: 100%; left: 0 !important; padding-left: 70px; padding-right: 15px; margin-bottom: 50px; text-align: left !important; }
+  .timeline-event-icon { left: 30px; transform: translateX(-50%); top: 15px; width: 45px; height: 45px; font-size: 1.3rem; }
+  .event-content-wrapper::after { display: none; }
+  .event-content-wrapper h3 { font-size: 1.5rem; }
+
+  /* Mobile Visionarios: Stacked Card-like */
+  .figures-container { gap: 40px; }
+  .figure-entry { flex-direction: column !important; padding: 20px; text-align: center !important; gap: 20px; background-color: var(--background-card); border-color: var(--border-color); transform: none !important; box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); }
+  .figure-entry:hover { background-color: var(--background-card-hover); box-shadow: 0 10px 30px rgba(0, 191, 255, 0.15); }
+  .figure-image-container { flex-basis: 140px; height: 140px; margin: 0 auto; }
+  h4 { font-size: 1.6rem; }
+  .figure-content .figure-click-hint { opacity: 1; font-size: 0.85rem;}
+
+   /* Advances Grid - Ensure books fit */
+   .advances-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; padding: 10px; }
+   .advance-book { width: 100%; max-width: 220px; height: auto; min-height: 280px; }
+   .advance-book svg.book-icon { width: 60px; height: 60px; }
+   .advance-book i.book-icon { font-size: 3.5rem; width: 60px; height: 60px; }
+   .advance-book .book-title { font-size: 1.3rem; }
+   .advance-book .book-inner-content { font-size: 0.9rem; }
+
+   /* Intro Map Adjustments */
+   .intro-section .intro-map-content { max-width: 380px; } /* Smaller map */
+   .intro-section .map-container {
+       --city-radius: 1.6rem;
+       --city-pin-size-font: 1rem;
+   }
+   .intro-section .map-city__label { width: 10em; margin-bottom: 12px; }
+   .intro-section .map-city__sign { font-size: 0.8rem; padding: 0.3em 0.6em; }
+
+   /* Intro Section Layout */
+   .intro-section .intro-text-content { max-width: 100%; }
+   .intro-section .intro-content-wrapper { gap: 40px; } /* Reduce gap when stacked */
+
+   /* Asegurar que los cohetes estén ocultos */
+   /* No es necesario repetir si la regla de 992px ya los oculta */
+}
+
+/* Móviles Pequeños */
+@media (max-width: 576px) {
+  body { padding-top: 50px; }
+  .navbar { height: 50px; }
+  h2 { font-size: 2rem; }
+  section { padding: 50px 0; }
+
+  /* Mobile Timeline */
+  .new-timeline-container::before { left: 25px; }
+  .timeline-event { padding-left: 60px; }
+  .timeline-event-icon { left: 25px; width: 40px; height: 40px; font-size: 1.2rem; }
+  .event-content-wrapper { padding: 20px; }
+  .event-content-wrapper h3 { font-size: 1.4rem; }
+
+  /* Mobile Visionarios */
+  .figure-image-container { flex-basis: 120px; height: 120px; }
+  h4 { font-size: 1.5rem; }
+  .figure-content .figure-description { font-size: 0.95rem; }
+
+  /* Advances Grid - Single column maybe */
+  .advances-grid { grid-template-columns: 1fr; gap: 30px; }
+  .advance-book { max-width: 250px; min-height: 300px; margin: 0 auto; }
+  .advance-book svg.book-icon { width: 55px; height: 55px; }
+  .advance-book i.book-icon { font-size: 3rem; width: 55px; height: 55px; }
+  .advance-book .book-title { font-size: 1.4rem; }
+
+  /* Intro Map further adjustments */
+  .intro-section .intro-map-content { max-width: 320px; }
+  .intro-section .map-container { --city-radius: 1.5rem; --city-pin-size-font: 0.9rem; }
+   .intro-section .map-city__sign { font-size: 0.75rem; }
+
+  /* Intro Text/Card */
+   .intro-section .intro-text-content .card {
+       max-width: 100%; /* Allow full width on small screens */
+       max-height: none; /* Remove height restriction if needed */
+       height: auto; /* Auto height based on content */
+       padding: 1.5em 1em; /* Adjust padding slightly */
+   }
+   .intro-section .intro-text-content .card .small-desc {
+       font-size: 0.95em; /* Slightly smaller text */
+   }
+
+  .modal-content { padding: 20px; }
+  #modal-detail-title { font-size: 1.8rem; }
+  .modal-body p#modal-detail-text { font-size: 1rem; }
+}
+
+
+/* --- INICIO: Estilos de la Tarjeta Añadida --- */
+/* From Uiverse.io by SouravBandyopadhyay */
+/* Scoped within intro section to avoid potential conflicts */
+.intro-section .card {
+display: block;
+position: relative;
+/* max-width: 500px; */ /* Controlado por .intro-text-content y media queries */
+width: 100%; /* Ocupa el ancho del contenedor padre */
+/* max-height: 320px; */ /* Considera hacerlo auto o ajustarlo */
+height: auto; /* Altura automática basada en contenido */
+background-color: #f2f8f9;
+border-radius: 10px;
+padding: 2em 1.2em;
+/* margin: 12px; */ /* Quitamos el margen para que se ajuste mejor al layout flex */
+margin-bottom: 0; /* Aseguramos que no haya margen inferior por defecto */
+text-decoration: none;
+z-index: 0;
+overflow: hidden;
+background: linear-gradient(to bottom, #6bbdcc, #1a8499);
+font-family: Arial, Helvetica, sans-serif; /* Considera usar 'inherit' o la fuente base */
+}
+
+.intro-section .card-title {
+color: #262626;
+font-size: 1.5em;
+line-height: normal;
+font-weight: 700;
+margin-bottom: 0.5em;
+font-family: inherit; /* Hereda la fuente principal */
+}
+
+.intro-section .small-desc {
+font-size: 1em;
+font-weight: 400;
+line-height: 1.5em;
+color: #452c2c;
+margin-bottom: 0; /* Quitamos margen inferior al párrafo de descripción */
+font-family: inherit; /* Hereda la fuente principal */
+}
+
+.intro-section .go-corner {
+display: flex;
+align-items: center;
+justify-content: center;
+position: absolute;
+width: 2em;
+height: 2em;
+overflow: hidden;
+top: 0;
+right: 0;
+background: linear-gradient(135deg, #6293c8, #384c6c);
+border-radius: 0 4px 0 32px; /* Corregido el radio */
+}
+
+.intro-section .go-arrow {
+margin-top: -4px;
+margin-right: -4px;
+color: white;
+font-family: courier, sans;
+}
+
+
+.intro-section .card:before {
+content: '';
+position: absolute;
+z-index: -1;
+top: -16px;
+right: -16px;
+background: linear-gradient(135deg, #364a60, #384c6c);
+height: 36px; /* Corregido tamaño */
+width: 36px; /* Corregido tamaño */
+border-radius: 32px; /* Corregido radio */
+transform: scale(1);
+transform-origin: 50% 50%;
+transition: transform 0.35s ease-out;
+}
+
+.intro-section .card:hover:before {
+transform: scale(38); /* Ajustado ligeramente para cubrir bien */
+}
+
+.intro-section .card:hover .small-desc {
+transition: all 0.5s ease-out;
+color: rgba(255, 255, 255, 0.9); /* Un poco más opaco */
+}
+
+.intro-section .card:hover .card-title {
+transition: all 0.5s ease-out;
+color: #ffffff;
+}
+
+/* --- FIN: Estilos de la Tarjeta Añadida --- */
+
+
+/* --- INICIO: Estilos del Cohete Añadido --- */
+/* From Uiverse.io by JkHuger */
+/* Scoped within conclusion-section */
+.conclusion-section .rocket {
+position: absolute;
+width: 80px;
+/* top y left/right se definen en .rocket-left y .rocket-right */
+z-index: 1; /* Detrás del texto pero encima del fondo */
+}
+
+.conclusion-section .rocket-left {
+  left: 40px; /* Ajusta según necesites */
+  bottom: 30px; /* Posición desde abajo del .container */
+}
+
+.conclusion-section .rocket-right {
+  right: 40px; /* Ajusta según necesites */
+  bottom: 30px; /* Posición desde abajo del .container */
+}
+
+
+.conclusion-section .rocket .rocket-body {
+width: 80px;
+/* left: calc(50% - 50px); */ /* No necesita left aquí */
+animation: bounce 0.5s infinite;
+position: relative; /* Añadido para que :before se posicione correctamente */
+}
+
+.conclusion-section .rocket .rocket-body .body {
+background-color: #dadada;
+height: 180px;
+/* left: calc(50% - 50px); */ /* No necesita left aquí */
+border-top-right-radius: 100%;
+border-top-left-radius: 100%;
+border-bottom-left-radius: 50%;
+border-bottom-right-radius: 50%;
+border-top: 5px solid #000000;
+}
+
+.conclusion-section .rocket .rocket-body:before {
+content: '';
+position: absolute;
+left: calc(50% - 24px);
+width: 48px;
+height: 13px;
+background-color: #554842;
+bottom: -13px;
+border-bottom-right-radius: 60%;
+border-bottom-left-radius: 60%;
+}
+
+.conclusion-section .rocket .window {
+position: absolute;
+width: 40px;
+height: 40px;
+border-radius: 100%;
+background-color: #a75248;
+left: calc(50% - 25px); /* Centrado relativo al cohete */
+top: 40px;
+border: 5px solid #b4b2b2;
+}
+
+.conclusion-section .rocket .fin {
+position: absolute;
+z-index: -1; /* Detrás del cuerpo del cohete */
+height: 55px;
+width: 50px;
+background-color: #a75248;
+}
+
+.conclusion-section .rocket .fin-left {
+left: -30px;
+top: calc(100% - 55px);
+border-top-left-radius: 80%;
+border-bottom-left-radius: 20%;
+}
+
+.conclusion-section .rocket .fin-right {
+right: -30px;
+top: calc(100% - 55px);
+border-top-right-radius: 80%;
+border-bottom-right-radius: 20%;
+}
+
+.conclusion-section .rocket .exhaust-flame {
+position: absolute;
+top: 100%; /* Empieza justo debajo del cuerpo */
+width: 28px;
+background: linear-gradient(to bottom, transparent 10%, #f5f5f5 100%);
+height: 150px;
+left: calc(50% - 14px);
+animation: exhaust 0.2s infinite;
+border-bottom-left-radius: 50%; /* Suaviza la base de la llama */
+border-bottom-right-radius: 50%;
+}
+
+.conclusion-section .rocket .exhaust-fumes {
+  position: absolute;
+  bottom: -250px; /* Ajusta para que los humos aparezcan debajo */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200%; /* Ancho para que los humos se dispersen */
+  height: 300px; /* Altura del área de humos */
+  /* background: rgba(255, 0, 0, 0.1); */ /* Para depurar área */
+  pointer-events: none; /* No interfiere con clics */
+  z-index: 0; /* Detrás del cohete principal pero visible */
+}
+
+
+.conclusion-section .rocket .exhaust-fumes li {
+width: 60px;
+height: 60px;
+background-color: rgba(74, 195, 229, 0.523); /* Humo semitransparente */
+list-style: none;
+position: absolute;
+border-radius: 100%;
+bottom: 0; /* Empiezan abajo del contenedor de humos */
+left: 50%;
+transform: translateX(-50%);
+}
+
+/* Posiciones iniciales relativas al contenedor .exhaust-fumes */
+.conclusion-section .rocket .exhaust-fumes li:first-child {
+width: 60px; height: 60px; left: 50%; bottom: 0; /* Posición base */
+animation: fumes 5s infinite linear;
+}
+.conclusion-section .rocket .exhaust-fumes li:nth-child(2) {
+width: 40px; height: 40px; left: 40%; bottom: 10px;
+animation: fumes 3.2s infinite linear 0.5s;
+}
+.conclusion-section .rocket .exhaust-fumes li:nth-child(3) {
+width: 50px; height: 50px; left: 65%; bottom: 5px;
+animation: fumes 3s infinite linear 1s;
+}
+.conclusion-section .rocket .exhaust-fumes li:nth-child(4) {
+width: 30px; height: 30px; left: 35%; bottom: 20px;
+animation: fumes 4s infinite linear 1.5s;
+}
+.conclusion-section .rocket .exhaust-fumes li:nth-child(5) {
+width: 45px; height: 45px; left: 55%; bottom: 15px;
+animation: fumes 5s infinite linear 0.2s;
+}
+.conclusion-section .rocket .exhaust-fumes li:nth-child(6) {
+width: 55px; height: 55px; left: 45%; bottom: 10px;
+animation: fumes2 10s infinite linear 0.8s;
+}
+.conclusion-section .rocket .exhaust-fumes li:nth-child(7) {
+ width: 35px; height: 35px; left: 60%; bottom: 25px;
+ animation: fumes 6s infinite linear 1.2s;
+}
+.conclusion-section .rocket .exhaust-fumes li:nth-child(8) {
+ width: 40px; height: 40px; left: 70%; bottom: 18px;
+ animation: fumes 4.5s infinite linear 0.4s;
+}
+.conclusion-section .rocket .exhaust-fumes li:nth-child(9) {
+ width: 30px; height: 30px; left: 25%; bottom: 22px;
+ animation: fumes 7s infinite linear 1.8s;
+}
+
+
+.conclusion-section .star {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* No interfieren */
+  z-index: 0; /* Detrás del cohete */
+}
+
+.conclusion-section .star li {
+list-style: none;
+position: absolute;
+}
+
+.conclusion-section .star li:before, .conclusion-section .star li:after {
+content: '';
+position: absolute;
+background-color: #00e5ff; /* Color de estrella */
+}
+
+.conclusion-section .star li:before {
+width: 10px; /* Tamaño estrella */
+height: 2px;
+border-radius: 50%;
+}
+
+.conclusion-section .star li:after {
+height: 8px; /* Tamaño estrella */
+width: 2px;
+left: 4px;
+top: -3px;
+}
+
+/* Posicionamiento de estrellas relativo al .container */
+.conclusion-section .star li:first-child {
+top: 10%; left: 15%; /* Ajusta posiciones */
+animation: twinkle 0.8s infinite alternate;
+}
+.conclusion-section .star li:nth-child(2) {
+top: 30%; left: 80%;
+animation: twinkle 1s infinite alternate 0.2s;
+}
+.conclusion-section .star li:nth-child(2):before { height: 1px; width: 5px; }
+.conclusion-section .star li:nth-child(2):after { width: 1px; height: 5px; top: -2px; left: 2px; }
+
+.conclusion-section .star li:nth-child(3) {
+top: 60%; left: 90%;
+animation: twinkle 1.5s infinite alternate;
+}
+.conclusion-section .star li:nth-child(4) {
+top: 75%; left: 10%;
+animation: twinkle 0.7s infinite alternate 0.4s;
+}
+.conclusion-section .star li:nth-child(5) {
+top: 45%; left: 5%;
+animation: twinkle 1.2s infinite alternate;
+}
+.conclusion-section .star li:nth-child(6) {
+top: 85%; left: 60%;
+animation: twinkle 0.6s infinite alternate 0.6s;
+}
+.conclusion-section .star li:nth-child(6):before { height: 1px; width: 5px; }
+.conclusion-section .star li:nth-child(6):after { width: 1px; height: 5px; top: -2px; left: 2px; }
+
+.conclusion-section .star li:nth-child(7) {
+ top: 20%; left: 40%;
+ animation: twinkle 0.9s infinite alternate 0.1s;
+}
+
+/* Keyframes (scoped para evitar conflictos) */
+@keyframes bounce {
+0%   { transform: translate3d(0px, 0px, 0); }
+50%  { transform: translate3d(0px, -4px, 0); }
+100% { transform: translate3d(0px, 0px, 0); }
+}
+
+@keyframes exhaust {
+0%   { background: linear-gradient(to bottom, transparent 10%, #f5f5f5 100%); opacity: 1;}
+50%  { background: linear-gradient(to bottom, transparent 8%, #f5f5f5 100%); opacity: 0.8;}
+75% { background: linear-gradient(to bottom, transparent 12%, #f5f5f5 100%); opacity: 0.9;}
+100% { background: linear-gradient(to bottom, transparent 10%, #ffffff 100%); opacity: 1;}
+}
+
+@keyframes fumes {
+0% {
+  transform: translateY(0) scale(0.8) translateX(-50%);
+  opacity: 0.8;
+}
+50% {
+    transform: translateY(-150px) scale(1.5) translateX(-60%); /* Sube y se expande */
+    opacity: 0.3;
+}
+100% {
+    transform: translateY(-300px) scale(0.5) translateX(-40%); /* Sube más y se encoge/dispersa */
+    opacity: 0;
+}
+}
+
+@keyframes fumes2 { /* Variación para algunos humos */
+ 0% {
+  transform: translateY(0) scale(1) translateX(-50%);
+  opacity: 0.7;
+}
+50% {
+    transform: translateY(-120px) scale(1.3) translateX(-45%);
+    opacity: 0.4;
+}
+100% {
+    transform: translateY(-280px) scale(0.6) translateX(-55%);
+    opacity: 0;
+}
+}
+
+
+@keyframes twinkle {
+0% { opacity: 0.5; transform: scale(0.9); }
+100% { opacity: 1; transform: scale(1.1); }
+}
+/* --- FIN: Estilos del Cohete Añadido --- */
+
+
+/* --- FIN DE style.css --- */

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería S.XXI - Visionarios</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">Ingeniería S.XXI</a>
+            <ul class="nav-links">
+                <li><a href="introduccion.html">Introducción</a></li>
+                <li><a href="hitos.html">Hitos</a></li>
+                <li><a href="avances.html">Avances</a></li>
+                <li><a href="visionarios.html" class="active">Visionarios</a></li>
+                <li><a href="futuro.html">Futuro</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal con NUEVA estructura de Visionarios -->
+    <main>
+        <section class="figures-section reveal">
+            <div class="container">
+                <h2>Visionarios del Siglo XXI</h2>
+                <p class="section-subtitle">Mentes que han impulsado cambios disruptivos. Haz clic para saber más.</p>
+
+                <div class="figures-container">
+
+                     <!-- Figura: Musk (Imagen Izquierda) -->
+                    <div class="figure-entry reveal figure-image-left clickable-figure" data-modal-id="musk">
+                        <div class="figure-image-container">
+                             <!-- CAMBIA ESTA IMAGEN -->
+                            <img src="imagenes/placeholder_musk.jpg" alt="Elon Musk">
+                        </div>
+                        <div class="figure-content">
+                            <h4>Elon Musk</h4>
+                            <p class="figure-description">Co-fundador de Tesla, SpaceX, Neuralink y The Boring Company. Revolucionando el transporte terrestre eléctrico, la exploración espacial y buscando integrar la mente humana con la IA.</p>
+                        </div>
+                    </div>
+
+                     <!-- Figura: Jobs (Imagen Derecha) -->
+                     <div class="figure-entry reveal figure-image-right clickable-figure" data-modal-id="jobs">
+                         <div class="figure-content">
+                            <h4>Steve Jobs</h4>
+                            <p class="figure-description">Co-fundador de Apple. Un icono del diseño y la innovación que transformó la computación personal, la industria musical, la telefonía móvil y la animación digital (Pixar).</p>
+                        </div>
+                         <div class="figure-image-container">
+                            <!-- CAMBIA ESTA IMAGEN -->
+                            <img src="imagenes/placeholder_jobs.jpg" alt="Steve Jobs">
+                         </div>
+                    </div>
+
+                    <!-- Figura: Zuckerberg (Imagen Izquierda) -->
+                    <div class="figure-entry reveal figure-image-left clickable-figure" data-modal-id="zuckerberg">
+                        <div class="figure-image-container">
+                             <!-- CAMBIA ESTA IMAGEN -->
+                             <img src="imagenes/placeholder_zuckerberg.jpg" alt="Mark Zuckerberg">
+                        </div>
+                         <div class="figure-content">
+                             <h4>Mark Zuckerberg</h4>
+                             <p class="figure-description">Fundador y CEO de Meta Platforms (anteriormente Facebook). Creó la red social más grande del mundo, conectando a miles de millones y ahora apostando fuertemente por el desarrollo del metaverso.</p>
+                         </div>
+                     </div>
+
+                     <!-- Figura: Bezos (Imagen Derecha) -->
+                     <div class="figure-entry reveal figure-image-right clickable-figure" data-modal-id="bezos">
+                          <div class="figure-content">
+                              <h4>Jeff Bezos</h4>
+                              <p class="figure-description">Fundador de Amazon y Blue Origin. Pionero del comercio electrónico que revolucionó el retail global. También invierte en exploración espacial y medios de comunicación.</p>
+                          </div>
+                          <div class="figure-image-container">
+                               <!-- CAMBIA ESTA IMAGEN -->
+                              <img src="imagenes/placeholder_bezos.jpg" alt="Jeff Bezos">
+                          </div>
+                      </div>
+
+                     <!-- Figura: Altman (Imagen Izquierda) -->
+                     <div class="figure-entry reveal figure-image-left clickable-figure" data-modal-id="altman">
+                         <div class="figure-image-container">
+                              <!-- CAMBIA ESTA IMAGEN -->
+                              <img src="imagenes/placeholder_altman.jpg" alt="Sam Altman">
+                         </div>
+                          <div class="figure-content">
+                              <h4>Sam Altman</h4>
+                              <p class="figure-description">CEO de OpenAI. Emprendedor e inversor clave en el desarrollo y popularización de la inteligencia artificial generativa avanzada (como ChatGPT y DALL-E) y promotor de la IA segura.</p>
+                          </div>
+                      </div>
+
+                     <!-- Figura: Page & Brin (Imagen Derecha) -->
+                     <div class="figure-entry reveal figure-image-right clickable-figure" data-modal-id="pagebrin">
+                          <div class="figure-content">
+                              <h4>Larry Page & Sergey Brin</h4>
+                              <p class="figure-description">Co-fundadores de Google (Alphabet). Crearon el motor de búsqueda dominante y sentaron las bases para una de las empresas tecnológicas más influyentes del mundo en información, publicidad, IA y más.</p>
+                          </div>
+                          <div class="figure-image-container">
+                               <!-- CAMBIA ESTA IMAGEN -->
+                              <img src="imagenes/placeholder_google.jpg" alt="Larry Page y Sergey Brin">
+                          </div>
+                      </div>
+                    <!-- FIN FIGURAS -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+     <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <p>© 2025 Exploración de la Ingeniería del Siglo XXI.</p>
+            <p>Contenido adaptado e inspirado en la presentación original.</p>
+        </div>
+    </footer>
+
+     <!-- Modal Genérico para Detalles -->
+     <div id="detailModal" class="modal">
+         <div class="modal-content">
+            <span class="close-btn">×</span>
+            <div class="modal-header">
+                 <img id="modal-detail-img" src="" alt="Detalle" class="modal-img" style="display: none;">
+                 <i id="modal-detail-icon" class="" style="display: none;"></i>
+            </div>
+            <h3 id="modal-detail-title">Título Detalle</h3>
+            <div class="modal-body">
+                <p id="modal-detail-text">Descripción detallada aquí...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

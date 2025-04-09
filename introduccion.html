@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingeniería S.XXI - Introducción</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  
+    <!-- Barra de Navegación -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">Ingeniería S.XXI</a>
+            <ul class="nav-links">
+                <li><a href="introduccion.html" class="active">Introducción</a></li>
+                <li><a href="hitos.html">Hitos</a></li>
+                <li><a href="avances.html">Avances</a></li>
+                <li><a href="visionarios.html">Visionarios</a></li>
+                <li><a href="futuro.html">Futuro</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main>
+        <section class="intro-section reveal">
+            <div class="container">
+                <h2>Introducción al Siglo XXI</h2>
+                <p class="section-subtitle">Un siglo marcado por disrupción tecnológica y desafíos globales. Explora las características clave en el mapa.</p>
+
+                <!-- Wrapper for two-column layout -->
+                <div class="intro-content-wrapper">
+
+                    <!-- Left Column: Text Content (Ahora con la tarjeta) -->
+                    <div class="intro-text-content">
+                        <!-- Inicio de la Tarjeta Integrada -->
+                        <!-- From Uiverse.io by SouravBandyopadhyay -->
+                        <div class="card">
+                          <p class="card-title">¿Que ha sucedido?</p>
+                          <p class="small-desc">
+                            En el siglo XXI, la tecnología avanza a un ritmo sin precedentes, convirtiendo la digitalización en el núcleo de la sociedad global. La inteligencia artificial se integra en todos los ámbitos de la vida, mientras enfrentamos desafíos como la crisis climática y la necesidad de colaboración internacional. En este contexto, la ingeniería juega un papel crucial, no solo como motor de innovación, sino como herramienta para construir un futuro más sostenible y ético.
+                          </p>
+                          <div class="go-corner">
+                             <!-- Puedes añadir <div class="go-arrow">→</div> aquí si quieres la flecha -->
+                          </div>
+                        </div>
+                        <!-- Fin de la Tarjeta Integrada -->
+
+                        <div class="intro-icons">
+                           <!-- Los iconos permanecen aquí si son necesarios -->
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Interactive Map -->
+                    <div class="intro-map-content">
+                        <div class="map-container">
+                          <svg viewBox="10 10 500 500" class="map-background">
+                            <rect style="fill: #36576e" width="5000" height="5000"></rect> <!-- Slightly different background color -->
+                            <path
+                              style="fill: var(--secondary-color)" /* Use theme color */
+                              d="M0,367.82c5.83-4.39,14.42-10.16,25.59-15.34,4.52-2.09,43.19-19.51,79.55-11.93,36.1,7.52,35.75,32.55,78.41,60.23,46.34,30.06,109.47,41.21,123.32,22.1,11.95-16.49-22.61-41.92-13.66-84.6,4.85-23.1,22.33-50.71,47.73-58.52,42.42-13.05,78.83,39.45,102.84,23.86,15.81-10.26.01-32.87,22.73-74.43,5.8-10.62,11.65-21.15,11.93-36.93.28-15.69-5.63-26.64-7.95-32.39-6.66-16.45-6.21-45.15,28.84-98.55.23,146.23.46,292.46.69,438.69H0v-132.18Z"
+                            ></path>
+                          </svg>
+                          <div class="map-cities">
+                            <!-- Point 1: Globalizacion -->
+                            <div style="--x: 30; --y: 55;" class="map-city">
+                              <div class="map-city__label">
+                                <span data-icon="🌍" class="map-city__sign">Globalización</span>
+                              </div>
+                            </div>
+                            <!-- Point 2: Revolucion Digital -->
+                            <div style="--x: 30; --y: 25;" class="map-city">
+                              <div class="map-city__label">
+                                <span data-icon="💻" class="map-city__sign anim anim-grow"
+                                  >Revolución Digital</span
+                                >
+                              </div>
+                            </div>
+                             <!-- Point 3: IA Emergente -->
+                            <div style="--x: 80; --y: 25;" class="map-city">
+                              <div class="map-city__label">
+                                <span data-icon="🤖" class="map-city__sign">IA Emergente</span>
+                              </div>
+                            </div>
+                            <!-- Point 4: Biotecnologia -->
+                            <div style="--x: 55; --y: 80;" class="map-city">
+                              <div class="map-city__label">
+                                <span data-icon="🧬" class="map-city__sign anim anim-slidein"
+                                  >Biotecnología</span
+                                >
+                              </div>
+                            </div>
+                            <!-- Point 5: Crisis Climatica -->
+                            <div style="--x: 78; --y: 55;" class="map-city">
+                              <div class="map-city__label">
+                                <span data-icon="🔥" class="map-city__sign">Crisis Climática</span>
+                              </div>
+                            </div>
+                             <!-- Point 6: Desafios Eticos -->
+                            <div style="--x: 80; --y: 85;" class="map-city">
+                              <div class="map-city__label">
+                                <span data-icon="🤔" class="map-city__sign anim anim-slidein">Crisis Éticas</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                </div> <!-- End intro-content-wrapper -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+             <p>© 2025 Exploración de la Ingeniería del Siglo XXI. </p>
+             <p>Contenido adaptado e inspirado en la presentación original.</p>
+        </div>
+        
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
